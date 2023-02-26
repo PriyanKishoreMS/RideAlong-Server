@@ -6,9 +6,9 @@ A Community focused car-pooling application - Connect with people, create and jo
 
 `Note: The app is not deployed yet`
 
-## Code Structure
+## Server Code Structure
 
-The code is structured as follows:
+The server code is structured as follows:
 
 - `config`: Configuration files for connecting to the MongoDB and Neo4j databases.
 - `middleware`: Middleware functions used by the server for authentication.
@@ -17,7 +17,7 @@ The code is structured as follows:
 
 ### Database Integration
 
-The Ridealong application features a follow system that enables users to connect with each other within the app. At first, this system was implemented using MongoDB, but as I continued to develop the application, I realized that it needed to scale and become more efficient. As a result, I decided to shift the feature to a Neo4j graph database.
+The application features a follow system that allows users to connect with each other within the app. Initially, this system was implemented using MongoDB. However, as I continued to develop the application, I realized that it needed to scale and become more efficient. Additionally, I also wanted to implement a user suggestion system that was inefficient with the previous structure (please refer to `routes/api/suggestUser.js`). So, with some research, I decided to shift the follow system feature to a Neo4j graph database. This approach allowed me to develop a more efficient and scalable system while also improving the user suggestion feature
 
 To showcase both scenarios, I created two different files in the `models` and `routes/api` directories. The `users.js` file uses MongoDB to implement the follow feature, while the `usersneo.js` file uses Neo4j. Additionally, the models directory has two different schema files, `User.js` and `Userneo.js`, for MongoDB and Neo4j, respectively.
 
